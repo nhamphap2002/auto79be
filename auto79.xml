@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_auto79</name>
+    <creationDate>2017-10-08</creationDate>
+    <copyright>2017 Thang Tran</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Thang Tran</author>
+    <authorEmail>trantrongthang1207@gmail.com</authorEmail>
+    <authorUrl>http://</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description></description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>auto79.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_auto79" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="site/languages">
+        
+        <language tag="en-GB">en-GB/en-GB.com_auto79.ini</language>
+        <language tag="vi-VN">vi-VN/vi-VN.com_auto79.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_auto79/images/s_com_auto79.png" >COM_AUTO79</menu>
+        <submenu>
+            <menu link="option=com_auto79&amp;view=articless" view="articless" img="media/com_auto79/images/s_articless.png" alt="Auto79/Articless">COM_AUTO79_TITLE_ARTICLESS</menu>
+            <menu link="option=com_auto79&amp;view=links" view="links" img="media/com_auto79/images/s_links.png" alt="Auto79/Links">COM_AUTO79_TITLE_LINKS</menu>
+            <menu link="option=com_auto79&amp;view=crons" view="crons" img="media/com_auto79/images/s_crons.png" alt="Auto79/Crons">COM_AUTO79_TITLE_CRONS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>auto79.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator/languages">
+            
+            <language tag="en-GB">en-GB/en-GB.com_auto79.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_auto79.sys.ini</language>
+            <language tag="vi-VN">vi-VN/vi-VN.com_auto79.ini</language>
+            <language tag="vi-VN">vi-VN/vi-VN.com_auto79.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="auto79"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+        <field name="ordering"/>
+        <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <field name="checked_out" type="hidden" filter="unset"/>
+        <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+        <field name="created_by" type="createdby" default="0" label="COM_AUTO79_FORM_LBL_CRON_CREATED_BY" description="COM_AUTO79_FORM_DESC_CRON_CREATED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_CRON_CREATED_BY"/>
+        <field name="modified_by" type="modifiedby" default="0" label="COM_AUTO79_FORM_LBL_CRON_MODIFIED_BY" description="COM_AUTO79_FORM_DESC_CRON_MODIFIED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_CRON_MODIFIED_BY"/>
+        <field name="title" type="text" label="Title" required="true" description="Title"  hint="Title" class="inputbox" size="45" labelclass="control-label"/>
+        <field name="link" validate="url" type="url" required="true" label="COM_AUTO79_FORM_LBL_LINK_LINK" description="COM_AUTO79_FORM_DESC_LINK_LINK" hint="COM_AUTO79_FORM_LBL_LINK_LINK"/>
+<!--        <field 
+            name="link"
+            type="sql"
+            required="true" 
+            label="COM_AUTO79_FORM_LBL_CRON_LINK" 
+            description="COM_AUTO79_FORM_DESC_CRON_LINK"
+            hint="COM_AUTO79_FORM_LBL_CRON_LINK"
+            query="SELECT id, title FROM #__auto79_link"
+            key_field="id"
+            value_field="title"
+        >
+            <option value="">Chọn link site</option>
+        </field>-->
+        <field name="type_news" default="1" type="list" label="Loại tin" description="Loại tin" class="inputbox" size="1">
+            <option value="1">Rao vặt</option>
+            <option value="2">Tuyển dụng</option>
+        </field>
+        <field name="adcategories"
+               type="sql"
+               required="true" 
+               label="COM_AUTO79_FORM_LBL_CRON_ADCATEGORIES"
+               description="COM_AUTO79_FORM_DESC_CRON_ADCATEGORIES" 
+               hint="COM_AUTO79_FORM_LBL_CRON_ADCATEGORIES"
+               query="SELECT id, title FROM #__adverts79_categories"
+               key_field="id"
+               value_field="title"
+        >
+            <option value="">Chọn Chuyên mục</option>
+        </field>
+        <field name="province" 
+               query="SELECT id, title FROM #__address79_province" 
+               key_field="id" value_field="title" type="sql"
+               required="true"
+               label="COM_AUTO79_FORM_LBL_CRON_PROVINCE"
+               description="COM_AUTO79_FORM_DESC_CRON_PROVINCE" 
+               hint="COM_AUTO79_FORM_LBL_CRON_PROVINCE">
+            <option value="">Chọn Tinh thanh</option>
+        </field>
+        <field name="approval" default="1" type="list" label="Duyệt tin" description="Duyệt tin" class="inputbox" size="1">
+            <option value="1">Duyệt tin ngay</option>
+            <option value="0">Chờ phê duyệt</option>
+        </field>
+        <field name="userid"
+               query="SELECT id, name FROM #__users" 
+               key_field="id" value_field="name" type="sql"
+               label="ID Thành viên duyệt tự động" 
+               description="ID Thành viên duyệt tự động"
+               hint="ID Thành viên duyệt tự động">
+            <option value="">Chọn Thành viên</option>
+        </field>
+        <field showon="approval:0" required="true" name="timeapproval" type="number" label="Tự động duyệt sau(phút)" description="Tự động duyệt sau" hint="Tự động duyệt sau"/>
+        <field name="pageto" default="1" type="number" required="true" label="COM_AUTO79_FORM_LBL_CRON_PAGETO" description="COM_AUTO79_FORM_DESC_CRON_PAGETO" hint="COM_AUTO79_FORM_LBL_CRON_PAGETO"/>
+        <field name="pagestep" default="20" type="number" required="true" label="Số trang cần lấy cho mỗi lần chạy cron" description="Số trang cần lấy cho mỗi lần chạy cron" hint="Số trang cần lấy cho mỗi lần chạy cron"/>
+        <field name="pagefrom" default="0" type="number" label="COM_AUTO79_FORM_LBL_CRON_PAGEFROM" description="COM_AUTO79_FORM_DESC_CRON_PAGEFROM" hint="COM_AUTO79_FORM_LBL_CRON_PAGEFROM"/>
+        <field name="numbernews" default="1" required="true" type="number" label="Số lượng tin lấy về khi chạy cron job" description="Số lượng tin lấy về khi chạy cron job" hint="Số lượng tin lấy về khi chạy cron job"/>
+        <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+    </fieldset>
+</form>
