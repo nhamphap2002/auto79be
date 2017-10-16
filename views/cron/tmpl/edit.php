@@ -96,6 +96,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
                         endif;
                     endforeach;
                     ?>		
+                    <?php echo $this->form->renderField('elemid'); ?>
                     <?php echo $this->form->renderField('type_news'); ?>
                     <?php echo $this->form->renderField('province'); ?>
                     <?php echo $this->form->renderField('approval'); ?>

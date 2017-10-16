@@ -44,6 +44,18 @@
         >
             <option value="">Chọn Chuyên mục</option>
         </field>
+        <field name="elemid"
+               type="sql"
+               required="true" 
+               label="Chọn cấu trúc thẻ html để lấy nộ dung bài viết"
+               description="Chọn cấu trúc thẻ html để lấy nộ dung bài viết" 
+               hint="Chọn cấu trúc thẻ html để lấy nộ dung bài viết"
+               query="SELECT id, title FROM #__auto79_element"
+               key_field="id"
+               value_field="title"
+        >
+            <option value="">Chọn cấu trúc thẻ html</option>
+        </field>        
         <field name="province" 
                query="SELECT id, title FROM #__address79_province" 
                key_field="id" value_field="title" type="sql"
@@ -65,7 +77,7 @@
                hint="ID Thành viên duyệt tự động">
             <option value="">Chọn Thành viên</option>
         </field>
-        <field showon="approval:0" required="true" name="timeapproval" type="number" label="Tự động duyệt sau(phút)" description="Tự động duyệt sau" hint="Tự động duyệt sau"/>
+        <field showon="approval:0" name="timeapproval" type="number" label="Tự động duyệt sau(phút)" description="Tự động duyệt sau" hint="Tự động duyệt sau"/>
         <field name="pageto" default="1" type="number" required="true" label="COM_AUTO79_FORM_LBL_CRON_PAGETO" description="COM_AUTO79_FORM_DESC_CRON_PAGETO" hint="COM_AUTO79_FORM_LBL_CRON_PAGETO"/>
         <field name="pagestep" default="20" type="number" required="true" label="Số trang cần lấy cho mỗi lần chạy cron" description="Số trang cần lấy cho mỗi lần chạy cron" hint="Số trang cần lấy cho mỗi lần chạy cron"/>
         <field name="pagefrom" default="0" type="number" label="COM_AUTO79_FORM_LBL_CRON_PAGEFROM" description="COM_AUTO79_FORM_DESC_CRON_PAGEFROM" hint="COM_AUTO79_FORM_LBL_CRON_PAGEFROM"/>

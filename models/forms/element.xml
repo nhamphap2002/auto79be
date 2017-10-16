@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_AUTO79_FORM_LBL_ELEMENT_CREATED_BY" description="COM_AUTO79_FORM_DESC_ELEMENT_CREATED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_ELEMENT_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_AUTO79_FORM_LBL_ELEMENT_MODIFIED_BY" description="COM_AUTO79_FORM_DESC_ELEMENT_MODIFIED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_ELEMENT_MODIFIED_BY"/>
+    <field name="title" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_TITLE" description="COM_AUTO79_FORM_DESC_ELEMENT_TITLE" hint="COM_AUTO79_FORM_LBL_ELEMENT_TITLE"/>
+    <field name="numpage" default=".afterDiscussionListHandle .pageNavHeader" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_NUMPAGE" description="COM_AUTO79_FORM_DESC_ELEMENT_NUMPAGE" hint="COM_AUTO79_FORM_LBL_ELEMENT_NUMPAGE"/>
+    <field name="cateloopli" default=".discussionListItems .discussionListItem" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_CATELOOPLI" description="COM_AUTO79_FORM_DESC_ELEMENT_CATELOOPLI" hint="COM_AUTO79_FORM_LBL_ELEMENT_CATELOOPLI"/>
+    <field name="postlink" default="h3.title a" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_POSTLINK" description="COM_AUTO79_FORM_DESC_ELEMENT_POSTLINK" hint="COM_AUTO79_FORM_LBL_ELEMENT_POSTLINK"/>
+    <field name="titlepost" default=".mainContent .titleBar h1" filter="safehtml" type="text" label="COM_AUTO79_FORM_LBL_ELEMENT_TITLEPOST" description="COM_AUTO79_FORM_DESC_ELEMENT_TITLEPOST" hint="COM_AUTO79_FORM_LBL_ELEMENT_TITLEPOST"/>
+    <field name="postloopli" default=".InlineModForm .messageList li" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_POSTLOOPLI" description="COM_AUTO79_FORM_DESC_ELEMENT_POSTLOOPLI" hint="COM_AUTO79_FORM_LBL_ELEMENT_POSTLOOPLI"/>
+    <field name="postimg" default=".messageContent .SelectQuoteContainer img" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_POSTIMG" description="COM_AUTO79_FORM_DESC_ELEMENT_POSTIMG" hint="COM_AUTO79_FORM_LBL_ELEMENT_POSTIMG"/>
+    <field name="postcontent" default=".messageContent .SelectQuoteContainer" filter="safehtml" type="text" required="true" label="COM_AUTO79_FORM_LBL_ELEMENT_POSTCONTENT" description="COM_AUTO79_FORM_DESC_ELEMENT_POSTCONTENT" hint="COM_AUTO79_FORM_LBL_ELEMENT_POSTCONTENT"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

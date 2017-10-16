@@ -32,6 +32,9 @@ class Auto79Helper {
 //                JText::_('COM_AUTO79_TITLE_LINKS'), 'index.php?option=com_auto79&view=links', $vName == 'links'
 //        );
         JHtmlSidebar::addEntry(
+                JText::_('COM_AUTO79_TITLE_ELEMENTS'), 'index.php?option=com_auto79&view=elements', $vName == 'elements'
+        );
+        JHtmlSidebar::addEntry(
                 JText::_('COM_AUTO79_TITLE_CRONS'), 'index.php?option=com_auto79&view=crons', $vName == 'crons'
         );
     }
