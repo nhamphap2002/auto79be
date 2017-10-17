@@ -90,3 +90,26 @@ PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8mb4_unicode_ci;
 
 
+CREATE TABLE IF NOT EXISTS `#__auto79_job` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+
+`ordering` INT(11)  NOT NULL ,
+`state` TINYINT(1)  NOT NULL ,
+`checked_out` INT(11)  NOT NULL ,
+`checked_out_time` DATETIME NOT NULL ,
+`created_by` INT(11)  NOT NULL ,
+`modified_by` INT(11)  NOT NULL ,
+`link` VARCHAR(255)  NOT NULL ,
+`category_id` INT NOT NULL ,
+`province` INT NOT NULL ,
+`approval` INT NOT NULL ,
+`timeapproval` DATETIME NOT NULL ,
+`hasget` INT NOT NULL ,
+`hasapproval` INT NOT NULL ,
+`time_created` DATETIME NOT NULL ,
+`cronid` INT NOT NULL ,
+`jobid` INT NOT NULL ,
+`user_approval` INT NOT NULL ,
+PRIMARY KEY (`id`)
+) DEFAULT COLLATE=utf8mb4_unicode_ci;
+

@@ -34,7 +34,6 @@
         </field>
         <field name="adcategories"
                type="sql"
-               required="true" 
                label="COM_AUTO79_FORM_LBL_CRON_ADCATEGORIES"
                description="COM_AUTO79_FORM_DESC_CRON_ADCATEGORIES" 
                hint="COM_AUTO79_FORM_LBL_CRON_ADCATEGORIES"
@@ -79,8 +78,8 @@
         </field>
         <field showon="approval:0" name="timeapproval" type="number" label="Tự động duyệt sau(phút)" description="Tự động duyệt sau" hint="Tự động duyệt sau"/>
         <field name="pageto" default="1" type="number" required="true" label="COM_AUTO79_FORM_LBL_CRON_PAGETO" description="COM_AUTO79_FORM_DESC_CRON_PAGETO" hint="COM_AUTO79_FORM_LBL_CRON_PAGETO"/>
-        <field name="pagestep" default="20" type="number" required="true" label="Số trang cần lấy cho mỗi lần chạy cron" description="Số trang cần lấy cho mỗi lần chạy cron" hint="Số trang cần lấy cho mỗi lần chạy cron"/>
-        <field name="pagefrom" default="0" type="number" label="COM_AUTO79_FORM_LBL_CRON_PAGEFROM" description="COM_AUTO79_FORM_DESC_CRON_PAGEFROM" hint="COM_AUTO79_FORM_LBL_CRON_PAGEFROM"/>
+        <field name="pagestep" default="2" type="number" required="true" label="Số trang cần lấy cho mỗi lần chạy cron" description="Số trang cần lấy cho mỗi lần chạy cron" hint="Số trang cần lấy cho mỗi lần chạy cron"/>
+        <field name="pagefrom" default="8" type="number" label="COM_AUTO79_FORM_LBL_CRON_PAGEFROM" description="COM_AUTO79_FORM_DESC_CRON_PAGEFROM" hint="COM_AUTO79_FORM_LBL_CRON_PAGEFROM"/>
         <field name="numbernews" default="1" required="true" type="number" label="Số lượng tin lấy về khi chạy cron job" description="Số lượng tin lấy về khi chạy cron job" hint="Số lượng tin lấy về khi chạy cron job"/>
         <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
     </fieldset>

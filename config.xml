@@ -2,6 +2,9 @@
 <config>
     <fieldset label="COM_AUTO79" name="auto79">
         <field name="emailadmin" default='thang.testdev@gmail.com' type="text" filter="safehtml" label="Email thông báo khi cron hoàn thành" description="Email thông báo khi cron hoàn thành" hint="Email thông báo khi cron hoàn thành"/>
+        <field name="resetto" default='1' type="text" label="Đặt lại giá trị của trang bắt đầu khi hoàn thành cronjob" description="Đặt lại giá trị của trang bắt đầu khi hoàn thành cronjob" hint=""/>
+        <field name="resetloop" default='1' type="text" label="Đặt lại giá trị của độ dài của mỗi vòng lặp" description="Đặt lại giá trị của độ dài của mỗi vòng lặp" hint=""/>
+        <field name="resetfrom" default='2' type="text" label="Đặt lại giá trị của trang kết thúc khi hoàn thành cronjob" description="Đặt lại giá trị của trang kết thúc khi hoàn thành cronjob" hint=""/>
     </fieldset>
 
     <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">

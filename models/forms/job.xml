@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_AUTO79_FORM_LBL_JOB_CREATED_BY" description="COM_AUTO79_FORM_DESC_JOB_CREATED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_JOB_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_AUTO79_FORM_LBL_JOB_MODIFIED_BY" description="COM_AUTO79_FORM_DESC_JOB_MODIFIED_BY" hidden="true" hint="COM_AUTO79_FORM_LBL_JOB_MODIFIED_BY"/>
+    <field name="link" validate="url" type="url" label="COM_AUTO79_FORM_LBL_JOB_LINK" description="COM_AUTO79_FORM_DESC_JOB_LINK" hint="COM_AUTO79_FORM_LBL_JOB_LINK"/>
+    <field name="category_id" label="COM_AUTO79_FORM_LBL_JOB_CATEGORY_ID" description="COM_AUTO79_FORM_DESC_JOB_CATEGORY_ID" hint="COM_AUTO79_FORM_LBL_JOB_CATEGORY_ID"/>
+    <field name="province" label="COM_AUTO79_FORM_LBL_JOB_PROVINCE" description="COM_AUTO79_FORM_DESC_JOB_PROVINCE" hint="COM_AUTO79_FORM_LBL_JOB_PROVINCE"/>
+    <field name="approval" default="0" label="COM_AUTO79_FORM_LBL_JOB_APPROVAL" description="COM_AUTO79_FORM_DESC_JOB_APPROVAL" hint="COM_AUTO79_FORM_LBL_JOB_APPROVAL"/>
+    <field name="timeapproval" default="0000-00-00 00:00:00" type="calendar" class="inputbox" filter="safehtml" format="%Y-%m-%d %H:%M:%S" showtime="true" translateformat="true" label="COM_AUTO79_FORM_LBL_JOB_TIMEAPPROVAL" description="COM_AUTO79_FORM_DESC_JOB_TIMEAPPROVAL" hint="COM_AUTO79_FORM_LBL_JOB_TIMEAPPROVAL"/>
+    <field name="hasget" default="0" label="COM_AUTO79_FORM_LBL_JOB_HASGET" description="COM_AUTO79_FORM_DESC_JOB_HASGET" hint="COM_AUTO79_FORM_LBL_JOB_HASGET"/>
+    <field name="hasapproval" default="0" label="COM_AUTO79_FORM_LBL_JOB_HASAPPROVAL" description="COM_AUTO79_FORM_DESC_JOB_HASAPPROVAL" hint="COM_AUTO79_FORM_LBL_JOB_HASAPPROVAL"/>
+    <field name="time_created" default="0000-00-00 00:00:00" type="calendar" class="inputbox" filter="safehtml" format="%Y-%m-%d %H:%M:%S" showtime="true" translateformat="true" label="COM_AUTO79_FORM_LBL_JOB_TIME_CREATED" description="COM_AUTO79_FORM_DESC_JOB_TIME_CREATED" hint="COM_AUTO79_FORM_LBL_JOB_TIME_CREATED"/>
+    <field name="cronid" default="0" label="COM_AUTO79_FORM_LBL_JOB_CRONID" description="COM_AUTO79_FORM_DESC_JOB_CRONID" hint="COM_AUTO79_FORM_LBL_JOB_CRONID"/>
+    <field name="jobid" default="0" label="COM_AUTO79_FORM_LBL_JOB_JOBID" description="COM_AUTO79_FORM_DESC_JOB_JOBID" hint="COM_AUTO79_FORM_LBL_JOB_JOBID"/>
+    <field name="user_approval" default="0" label="COM_AUTO79_FORM_LBL_JOB_USER_APPROVAL" description="COM_AUTO79_FORM_DESC_JOB_USER_APPROVAL" hint="COM_AUTO79_FORM_LBL_JOB_USER_APPROVAL"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

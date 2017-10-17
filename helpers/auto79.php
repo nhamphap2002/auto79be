@@ -28,6 +28,11 @@ class Auto79Helper {
         JHtmlSidebar::addEntry(
                 JText::_('COM_AUTO79_TITLE_ARTICLESS'), 'index.php?option=com_auto79&view=articless', $vName == 'articless'
         );
+        JHtmlSidebar::addEntry(
+			JText::_('COM_AUTO79_TITLE_JOBS'),
+			'index.php?option=com_auto79&view=jobs',
+			$vName == 'jobs'
+		);
 //        JHtmlSidebar::addEntry(
 //                JText::_('COM_AUTO79_TITLE_LINKS'), 'index.php?option=com_auto79&view=links', $vName == 'links'
 //        );

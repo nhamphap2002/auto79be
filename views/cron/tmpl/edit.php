@@ -77,7 +77,8 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
                     <?php echo $this->form->renderField('modified_by'); ?>
                     <?php echo $this->form->renderField('title'); ?>
                     <?php echo $this->form->renderField('link'); ?>
-
+                    <?php echo $this->form->renderField('type_news'); ?>
+                    <?php echo $this->form->renderField('adcategories'); ?>
                     <?php
                     foreach ((array) $this->item->link as $value):
                         if (!is_array($value)):
@@ -86,8 +87,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
                         endif;
                     endforeach;
                     ?>				
-                    <?php echo $this->form->renderField('adcategories'); ?>
-
                     <?php
                     foreach ((array) $this->item->adcategories as $value):
                         if (!is_array($value)):
@@ -97,7 +96,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
                     endforeach;
                     ?>		
                     <?php echo $this->form->renderField('elemid'); ?>
-                    <?php echo $this->form->renderField('type_news'); ?>
                     <?php echo $this->form->renderField('province'); ?>
                     <?php echo $this->form->renderField('approval'); ?>
                     <?php echo $this->form->renderField('timeapproval'); ?>
@@ -115,33 +113,60 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
                         </div>
                     <?php endif; ?>
                     <?php if ($this->item->id > 0): ?>
-                        <div class="control-group">
-                            <div class="control-label">
-                                <label>Link cron get link bai viet</label>
+                        <?php if ($this->item->type_news == 1): ?>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Link cron get link bai viet</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronlinkpost&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
+                                <!--                            <div class="controls">
+                                <?php //echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronpost&link=<?php //echo $value; ?>&cate=<?php //echo $adcategories; ?>&pr=<?php //echo $this->item->province; ?>&to=<?php //echo $this->item->pageto; ?>&from=<?php //echo $this->item->pagefrom; ?>
+                                                            </div>-->
                             </div>
-                            <div class="controls">
-                                <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronlinkpost&id=<?php echo $this->item->id; ?></textarea>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Link cron lay noi dung tin</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronpost&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
                             </div>
-                            <!--                            <div class="controls">
-                            <?php //echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronpost&link=<?php //echo $value; ?>&cate=<?php //echo $adcategories; ?>&pr=<?php //echo $this->item->province; ?>&to=<?php //echo $this->item->pageto; ?>&from=<?php //echo $this->item->pagefrom; ?>
-                                                        </div>-->
-                        </div>
-                        <div class="control-group">
-                            <div class="control-label">
-                                <label>Link cron lay noi dung tin</label>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Link cron Tu dong phe duyet</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.autoApproval&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
                             </div>
-                            <div class="controls">
-                                <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.cronpost&id=<?php echo $this->item->id; ?></textarea>
+                        <?php else: ?>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Lay link tuyen dung</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cronjob&task=cronjob.cronlinkjob&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="control-label">
-                                <label>Link cron Tu dong phe duyet</label>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Lay tin tuyen dung</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cronjob&task=cronjob.cronjob&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
                             </div>
-                            <div class="controls">
-                                <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cron&task=cron.autoApproval&id=<?php echo $this->item->id; ?></textarea>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label>Tu dong phe duyet</label>
+                                </div>
+                                <div class="controls">
+                                    <textarea cols="60" rows="10"><?php echo str_replace('administrator/', '', JUri::base()); ?>index.php?option=com_auto79&view=cronjob&task=cronjob.autojob&id=<?php echo $this->item->id; ?></textarea>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </fieldset>
             </div>
@@ -157,3 +182,25 @@ $document->addStyleSheet(JUri::root() . 'media/com_auto79/css/form.css');
 
     </div>
 </form>
+<script>
+    jQuery(document).ready(function ($) {
+        $("#jform_type_news").chosen().change(function () {
+            var $type = $(this).val();
+            if ($type == 2) {
+                $(this).closest('.control-group').next('.control-group').hide();
+                $(this).closest('.control-group').next('.control-group').find('#jform_adcategories').removeClass('required').removeAttr('required');
+            } else {
+                $(this).closest('.control-group').next('.control-group').show();
+                $(this).closest('.control-group').next('.control-group').find('#jform_adcategories').addClass('required').attr('required', 'true');
+            }
+        })
+        var $type = $("#jform_type_news option:selected").val();
+        if ($type == 2) {
+            $("#jform_type_news").closest('.control-group').next('.control-group').hide();
+            $("#jform_type_news").closest('.control-group').next('.control-group').find('#jform_adcategories').removeClass('required').removeAttr('required');
+        } else {
+            $("#jform_type_news").closest('.control-group').next('.control-group').show();
+            $("#jform_type_news").closest('.control-group').next('.control-group').find('#jform_adcategories').addClass('required').attr('required', 'true');
+        }
+    })
+</script>
